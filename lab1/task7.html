@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task 7</title>
+    <style>
+        div {
+            position: relative;
+            top:50px;
+            left: 70px;
+            background-color: yellow;
+            width: 631px;
+            padding: 20px;
+            display: none;
+            margin-top: -3px;
+        }
+
+        .img {
+            border: 5px solid red;
+            position: relative;
+            top:50px;
+            left: 70px;
+        }
+
+        img:hover {
+            opacity: 0.8;
+            border: 4px red;
+        }
+
+        img:hover+div {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="./images/4.png" alt="" class="img">
+    <div>
+        <h2 style="text-align: center; color: red">Man on the Moon</h2>
+        <p style="font-size: 20px; color: red;">Astronaut Neil Armstrong, the first man to walk on the moon, July 20,
+            1969:
+            <br> "That's one small step for a man, one giant leap for mankind."
+        </p>
+    </div>
+
+</body>
+
+</html>
