@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Task 5</title>
+</head>
+<body>
+    <form>
+        <h3>Multiply and Divide two numbers:</h3>
+        <br>
+        <label for="num1"></label>
+        <input type="text" name="num1" id="num1">
+        <br>
+        <label for="num2"></label>
+        <input type="text" name="num2" id="num2">
+        <br>
+        <button type="button" id="Multiply">Multiply</button>
+        <button type="button" id="Divide">Divide</button>
+        <br>
+        <p id="result">The Result is :</p>
+    </form>
+    <script>
+        $("#Multiply").click(function(){
+            var num1 = $("#num1").val();
+            var num2 = $("#num2").val();
+            var result = num1 * num2;
+            $("#result").text("The Result is : " + result);
+        });
+        $("#Divide").click(function(){
+            var num1 = $("#num1").val();
+            var num2 = $("#num2").val();
+            var result = num1 / num2;
+            $("#result").text("The Result is : " + result);
+        });
+    </script>
+</body>
+</html>

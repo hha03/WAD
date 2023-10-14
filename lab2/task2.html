@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <title>Find largest 5 number</title>
+</head>
+<body>
+    <h3>Enter 5 numbers seperate by ,. More than that will get 5 first numbers</h3>
+    <form>
+        <input type="text" name="num" id="num">
+        <br>
+        <input type="submit" value="Find">
+    </form>
+    <script>
+        $(document).ready(function(){
+            $("form").submit(function(e){
+                e.preventDefault();
+                if ($("#num").val() == ""){
+                    alert("Please enter 5 numbers");
+                    return;
+                }
+                var num = $("#num").val();
+                var arr = num.split(",")
+                if (arr.length != 5) return alert("Please enter 5 numbers");
+                arr = arr.slice(0,5);
+                if (arr.some(isNaN)) return alert("Please enter number only");
+                arr = arr.map(Number);
+                var max = arr[0];
+                for(var i = 0; i < arr.length; i++){
+                    if(arr[i] > max){
+                        max = arr[i];
+                    }
+                }
+                alert(max);
+            });
+        });
+    </script>
+</body>
+</html>

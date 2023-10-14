@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        label{
+            display: inline-block;
+            width: 120px;
+        }
+        input {
+          display: inline-block;
+          margin: 2px;
+        }
+        form{
+            width: 300px;
+            margin: 0;
+            padding: 0;
+        }
+        form > h2{
+            text-align: center;
+        }
+        button[type="reset"]{
+            margin-left: 126px;
+        }
+        button {
+          display: inline-block;
+          margin-top: 2px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <h2>Sign up</h2>
+        <label for="username">Username: </label>
+        <input type="text" name="username" id="username">
+        <br>
+        <label for="password">Password: </label>
+        <input type="password" name="password" id="password">
+        <br>
+        <label for="confirm">Re-type password: </label>
+        <input type="password" name="confirm" id="confirm">
+        <br>
+        <button type="reset">Reset</button>
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        $(document).ready(function(){
+            $("form").submit(function(e){
+                e.preventDefault();
+                var username = $("#username").val();
+                var password = $("#password").val();
+                var confirm = $("#confirm").val();
+                if (password !== confirm){
+                    var newElement = $("<p id='notibox'></p>").text("Passwords do not match");
+                    newElement.css("color", "red");
+                } else {
+                    var newElement = $("<p id='notibox'></p>").text("Success");
+                    newElement.css("color", "green");
+                }
+                if ($("#notibox").length){
+                    $("#notibox").replaceWith(newElement);
+                } else {
+                    $("body").append(newElement);
+                }   
+            });
+        });
+    </script>
+</body>
+</html>
